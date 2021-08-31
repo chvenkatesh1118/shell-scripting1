@@ -46,4 +46,4 @@ echo text in no color , but this gets prints in color
 echo -e "\e[1;35mMessage in Color, But disable after ending\e[0m"
 echo text in no color 
 
-
+# https://misc.flogisoft.com/bash/tip_colors_and_formatting
