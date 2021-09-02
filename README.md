@@ -19,3 +19,12 @@ Topics we are going to discuss in shell
 #! is called as She-bang , It denotes path of interpreter. Also ensures the code that is present in the file executes with that interpreter. It has to be in the very first line
 
 ```
+
+## RoboShop Project
+
+1. Keep all components in one script 
+        Problem: We need to run only one component in one server
+2. Make Individual scripts for each component 
+        Problem: Making inividual may not make the code DRY(Dont repeat Yourself)
+
+Solution: Use single script, But call individual script on provided input
