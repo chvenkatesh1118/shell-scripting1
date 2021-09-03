@@ -42,7 +42,7 @@ Status_Check $?
 
 cd /tmp
 Print "Extracting Schema Archive"
-unzipp -o mongodb.zip &>>/tmp/log
+unzip -o mongodb.zip &>>/tmp/log
 Status_Check $?
 
 cd mongodb-main
