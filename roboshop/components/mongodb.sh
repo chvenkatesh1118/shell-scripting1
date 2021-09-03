@@ -23,15 +23,15 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc' >/etc/yum.repos.d/mongodb.repo
 Status_Check $?
 
-Print "Installing MongoDB"
+Print "Installing MongoDB\t"
 yum install -y mongodb-org &>>/tmp/log
 Status_Check $?
 
-Print "Configuring MongoDB"
+Print "Configuring MongoDB\t"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 Status_Check $?
 
-Print "Starting MongoDB"
+Print "Starting MongoDB\t"
 systemctl enable mongod
 systemctl restart mongod
 Status_Check $?
