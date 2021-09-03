@@ -10,7 +10,7 @@ Status_Check() {
 }
 
 Print() {
-  echo -n -e "$1 - "
+  echo -n -e "$1 \t- "
 }
 
 Print "Setting UP MongoDB Repo"
