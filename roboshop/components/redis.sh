@@ -10,11 +10,11 @@ Print "Setup Redis Repos\t\t\t"
 yum-config-manager --enable remi &>>$LOG
 Status_Check $?
 
-Print "Install Redis\t\t\t"
+Print "Install Redis\t\t\t\t"
 yum install redis -y  &>>$LOG
 Status_Check $?
 
-Print "Configure Redis Listen Address\t\t\t"
+Print "Configure Redis Listen Address\t\t"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf
 Status_Check $?
 
