@@ -32,22 +32,20 @@ Status_Check $?
 
 exit
 
+Print "Uninstall Password Validate Plugin"
+echo "uninstall plugin validate_password;" >/tmp/pass.sql
+mysql -u root -p"RoboShop@1" </tmp/pass.sql &>>$LOG
+Status_Check $?
 
+Print "Download the Schema"
+curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip" &>>$LOG
+Status_Check $?
 
-Run the following SQL commands to remove the password policy.
-> uninstall plugin validate_password;
-Setup Needed for Application.
-As per the architecture diagram, MySQL is needed by
+Print "Extract Schema File"
+cd /tmp && unzip -o  mysql.zip &>>$LOG
+Status_Check $?
 
-Shipping Service
-So we need to load that schema into the database, So those applications will detect them and run accordingly.
-
-To download schema, Use the following command
-
-# curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
-Load the schema for Services.
-
-# cd /tmp
-# unzip mysql.zip
-# cd mysql-main
-# mysql -u root -pRoboShop@1 <shipping.sql
+Print "Load Schema"
+cd mysql-main
+mysql -u root -pRoboShop@1 <shipping.sql &>>$LOG
+Status_Check $?
