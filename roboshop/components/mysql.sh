@@ -40,11 +40,11 @@ else
 fi
 Status_Check $?
 
-Print "Download the Schema\t\t\t"
+Print "Download the Schema\t\t"
 curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip" &>>$LOG
 Status_Check $?
 
-Print "Extract Schema File\t\t\t"
+Print "Extract Schema File\t\t"
 cd /tmp && unzip -o  mysql.zip &>>$LOG
 Status_Check $?
 
