@@ -19,7 +19,8 @@ done
    # commands
 # done
 
-for comp in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment; do
+COMPONENTS=(frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment)
+for comp in ${COMPONENTS[*]} ; do
   echo "Started Setting Up $comp"
   echo "End of $comp Setup"
 done
