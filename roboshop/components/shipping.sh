@@ -2,6 +2,6 @@
 
 source components/common.sh
 
-COMPONENT=catalogue
+COMPONENT=shipping
 ## NODEJS is a function from common.sh
 JAVA
