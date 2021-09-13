@@ -84,3 +84,20 @@ JAVA() {
   chown roboshop:roboshop -R /home/roboshop
   SystemdD_Setup
 }
+
+PYTHON() {
+  Print "Install Python3\t"
+  yum install python36 gcc python3-devel -y &>>$LOG
+  Status_Check $?
+
+  ADD_APP_USER
+
+  DOWNLOAD
+
+  cd /home/roboshop/payment
+  Print "Install Dependencies"
+  pip3 install -r requirements.txt &>>$LOG
+  Status_Check $?
+
+
+}
