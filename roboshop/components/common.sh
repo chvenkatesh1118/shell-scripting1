@@ -99,5 +99,12 @@ PYTHON() {
   pip3 install -r requirements.txt &>>$LOG
   Status_Check $?
 
+  USERID=$(id -u roboshop)
+  GROUPID=$(id -g roboshop)
+
+  Print "Update RoboShop User in Config"
+  sed -i -e "/uid/ c uid=${USERID}" -e "/gid/ c gid=${GROUPID}"  /home/roboshop/payment/payment.ini &>>$LOG
+  Status_Check $?
+
 
 }
