@@ -20,5 +20,6 @@ done
 # done
 
 for comp in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment; do
-  echo "Setting Up $comp"
+  echo "Started Setting Up $comp"
+  echo "End of $comp Setup"
 done
