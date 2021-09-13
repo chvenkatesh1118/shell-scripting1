@@ -12,4 +12,7 @@ case $UNAME in
   Darwin)
     echo "This is a MacOS Unix Box"
     ;;
+  *)
+    echo "Unknown OS"
+    ;;
 esac
