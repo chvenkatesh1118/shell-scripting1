@@ -14,3 +14,11 @@ while [ $i -gt 0 ]; do
   echo "Hello $i"
   i=$(($i-1))
 done
+
+# for var in val1 val2 val3 ; do
+   # commands
+# done
+
+for comp in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment; do
+  echo "Setting Up $comp"
+done
