@@ -86,7 +86,7 @@ JAVA() {
 }
 
 PYTHON() {
-  Print "Install Python3\t"
+  Print "Install Python3\t\t"
   yum install python36 gcc python3-devel -y &>>$LOG
   Status_Check $?
 
@@ -95,7 +95,7 @@ PYTHON() {
   DOWNLOAD
 
   cd /home/roboshop/payment
-  Print "Install Dependencies"
+  Print "Install Python Dependencies"
   pip3 install -r requirements.txt &>>$LOG
   Status_Check $?
 
