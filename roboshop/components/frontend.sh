@@ -1,27 +1,22 @@
 #!/bin/bash
+echo nginx installing mahendra
+ yum install nginx -y
 
-source components/common.sh
 
-Print "Install Nginx\t\t"
-yum install nginx -y &>>$LOG
-Status_Check $?
+ systemctl enable nginx
 
-Print "Download Frontend Archive"
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG
-Status_Check $?
+ systemctl start nginx
 
-Print "Extract Frontend Archive"
-rm -rf /usr/share/nginx/* && cd /usr/share/nginx && unzip -o /tmp/frontend.zip  &>>$LOG  && mv frontend-main/* .  &>>$LOG  &&   mv static html  &>>$LOG
-Status_Check $?
+ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
-Print "Copy Nginx RoboShop Config"
-mv localhost.conf /etc/nginx/default.d/roboshop.conf  &>>$LOG
-Status_Check $?
 
-Print "Update Nginx RoboShop Config"
-sed -i -e '/catalogue/ s/localhost/catalogue.roboshop.internal/' -e '/user/ s/localhost/user.roboshop.internal/' -e '/cart/ s/localhost/cart.roboshop.internal/' -e '/shipping/ s/localhost/shipping.roboshop.internal/' -e '/payment/ s/localhost/payment.roboshop.internal/' /etc/nginx/default.d/roboshop.conf  &>>$LOG
-Status_Check $?
+ cd /usr/share/nginx/html
+ rm -rf *
+ unzip /tmp/frontend.zip
+ mv frontend-main/* .
+ mv static/* .
+ rm -rf frontend-master static README.md
+ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
-Print "Restart Nginx\t\t"
-systemctl restart nginx  &>>$LOG  && systemctl enable nginx   &>>$LOG
-Status_Check $?
+
+ systemctl restart nginx
