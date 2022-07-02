@@ -38,7 +38,7 @@
 ################################################################
 echo enter soma value
 read a
-if [  a=0 ]; then
+if [  $a  -eq 0 ]; then
  echo "value is $a"
 else
   echo "value is not 0"
