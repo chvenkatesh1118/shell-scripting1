@@ -43,3 +43,14 @@ if [  $a  -eq 0 ]; then
 else
   echo "value is not 0"
 fi
+if [  $a  -eq 0 ]; then
+ echo "value is $a"
+else
+  echo "value is not 0"
+fi
+
+if [  $a  -gt 0 ]; then
+ echo "value is $a"
+else
+  echo "value is not 0"
+fi
