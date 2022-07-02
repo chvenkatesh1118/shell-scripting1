@@ -39,6 +39,6 @@
 echo enter soma value
 read a
 if [  a=0 ]; then
-  value is $a
+ echo "value is $a"
 
 fi
