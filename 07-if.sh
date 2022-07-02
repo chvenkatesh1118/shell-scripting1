@@ -22,4 +22,15 @@ if [ -e $file ]; then
   echo "File Exists"
 else 
   echo "File Does not exist"
-fi
+###########################################################
+## read command
+echo "what is your name..?"
+read name
+echo "hello $name"
+
+##output is
+
+what is your name..?
+chanti
+hello chanti
+###############################################################
