@@ -37,11 +37,11 @@ echo -e "Word1\t\t\tWord2"
 echo -e "\e[31mText in Red Color"
 echo -e "\e[33mText in Yellow Color"
 
-# We can increase the brightness and enable bold text using color code '1'
+# We can increase the brightness and enable bold text using color code.yml '1'
 echo -e "\e[1;31mText in Red Color"
 echo -e "\e[1;33mText in Yellow Color"
 echo text in no color , but this gets prints in color 
-# When the echo enables the color, It does not disable by default, We have to exclusively diable the enabled color. This is done by color code '0'
+# When the echo enables the color, It does not disable by default, We have to exclusively diable the enabled color. This is done by color code.yml '0'
 
 echo -e "\e[1;35mMessage in Color, But disable after ending\e[0m"
 echo text in no color 
