@@ -1,21 +1,28 @@
-#!/bin/bash 
+#!/bin/bash
 
-# Declare a function 
+## Functions should be always declared before using it, Same like variable
+## So that is the reason, Function we always find in starting of the scripts
 
-SAMPLE() {
+
+function abc() {
+  echo I am a function abc
   a=100
-  echo I am a function  
-  echo "Value of a in Function = $a"
+  echo a in function = $a
   b=20
-  echo "First Argument in Function = $1"
+  return 20
+  echo First Argument in Function = $1
 }
 
-## Main Program
+xyz() {
+  echo I am a function xyz
+}
 
-## Access a function 
+##  Main Program
 a=10
-SAMPLE xyz
-b=200
-echo "Value of b in Main Program = $b"
+#abc Rahul
+abc $1
+echo Exit status of abc - $?
+echo b in main program = $b
+xyz
 
-echo "First Argument in Main Program = $1"
+echo Frist Argument in Main Program = $1ent in Main Program = $1"

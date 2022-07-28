@@ -1,26 +1,28 @@
 #!/bin/bash
 
-## If we need to execute a set of commands continously in a iterative way then we use loops.
+# Loops are two major commands , while & for
 
-# while  (Inverse logic of while is until loop)
-# for    (Inverse logic of for is select loop)
+# While loop works on Expressions that we used in if statements
 
-# while [ expression ]; do
-  # Commands
-# done
-
-i=10
-while [ $i -gt 0 ]; do
-  echo "Hello $i"
-  i=$(($i-1))
+a=10
+while [ $a -gt 0 ]; do
+  echo While Loop
+  sleep 0.5
+  a=$(($a-1))
 done
 
-# for var in val1 val2 val3 ; do
-   # commands
-# done
 
-COMPONENTS=(frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment)
-for comp in ${COMPONENTS[*]} ; do
-  echo "Started Setting Up $comp"
-  echo "End of $comp Setup"
+# syntax : for var in items ; do commands ;done
+
+for fruit in apple banana orange peach ; do
+  echo Fruit Name = $fruit
+done
+
+echo -n "Checking COnnection on Port 22 for Host $1 "
+while true ; do
+  nc -w 1 -z $1 22 &>/dev/null
+  if [ $? -eq 0 ]; then
+    break
+  fi
+  echo -n '.'
 done
